@@ -23,11 +23,12 @@
       align-items: center;
       text-align: center;
       position: relative;
+      padding: 1rem;
     }
 
     /* === Title === */
     h1 {
-      font-size: 5rem;
+      font-size: 3.5rem;
       color: #fff;
       text-shadow: 0 0 25px #ff8fab, 0 0 50px #ff758f;
       animation: glowPulse 3s ease-in-out infinite;
@@ -48,13 +49,13 @@
     /* === Message === */
     .message {
       color: #fff;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       max-width: 850px;
-      line-height: 1.9;
+      line-height: 1.8;
       margin-top: 25px;
       padding: 20px 25px;
       border-radius: 15px;
-      background: rgba(255, 182, 193, 0.25); /* soft pink transparent bg */
+      background: rgba(255, 182, 193, 0.25);
       backdrop-filter: blur(5px);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
       text-shadow: 0 0 8px rgba(0,0,0,0.5);
@@ -67,27 +68,27 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-   .floating-img {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  opacity: 0.95;
-  transition: transform 2s ease-in-out, z-index 0.2s;
-  z-index: 1;
-}
+    /* === Floating Images === */
+    .floating-img {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      opacity: 0.95;
+      transition: transform 2s ease-in-out, z-index 0.2s;
+      z-index: 1;
+    }
 
-.floating-img:hover {
-  transform: scale(1.2) rotate(8deg);
-  z-index: 10;
-  opacity: 1;
-  filter: brightness(1.2);
-}
+    .floating-img:hover {
+      transform: scale(1.2) rotate(8deg);
+      z-index: 10;
+      opacity: 1;
+      filter: brightness(1.2);
+    }
 
-
-    /* === Flowers (emoji) === */
+    /* === Flower Emojis === */
     .flower {
       position: absolute;
       font-size: 2rem;
@@ -101,7 +102,7 @@
       100% { transform: translateY(110vh) rotate(360deg); opacity: 0.5; }
     }
 
-    /* === Confetti Canvas === */
+    /* === Confetti === */
     canvas {
       position: fixed;
       top: 0;
@@ -111,59 +112,94 @@
       pointer-events: none;
       z-index: 1;
     }
+
+    /* === Responsive Design === */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+        padding: 0 10px;
+      }
+
+      .message {
+        font-size: 1rem;
+        padding: 15px 20px;
+        line-height: 1.6;
+      }
+
+      .floating-img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+        overflow: auto;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .message {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+        line-height: 1.5;
+      }
+
+      .floating-img {
+        width: 70px;
+        height: 70px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>💖 Happy 1st Monthsary LOVE💖</h1>
-  
+  <h1>💖 Happy 1st Monthsary LOVE 💖</h1>
+
   <p class="message">
     Love, Happy 1st Monthsary satin! 💕  
     Hindi ko ma-explain kung gaano ako kasaya na ikaw yung nakasama ko sa bawat araw nitong unang buwan.  
     Parang ang bilis ng panahon pero bawat moment, sobrang special — dahil ikaw ‘yung dahilan ng bawat ngiti ko.  
-    Salamat sa patience mo, sa care, sa sweet na effort, at sa pagmamahal na pinaramdam mo sa akin 
-    Sa tuwing kasama kita, pakiramdam ko kumpleto ang araw ko .  
-    Kahit madalas ka na toyoin at mang away ng hind ko alam ang dahilan , hind ako mag sasawa na suyuin ka dahil mahal na mahal kita. 💗  
+    Salamat sa patience mo, sa care, sa sweet na effort, at sa pagmamahal na pinaramdam mo sa akin.  
+    Sa tuwing kasama kita, pakiramdam ko kumpleto ang araw ko.  
+    Kahit madalas ka na toyoin at mang away ng hind ko alam ang dahilan,  
+    hind ako mag sasawa na suyuin ka dahil mahal na mahal kita. 💗  
     I’m so proud and grateful to call you mine, Love.  
     I promise to love you more, understand you more, and choose you every single day.  
     Cheers to our first month and to forever with you, my one and only —  
     "Mahal na mahal kita, Love - ngayon, bukas, at palagi." 💞  
-    <br><br>– Steven to Marga - 💫
+    <br><br>– Steven to Marga 💫
   </p>
 
-  <!-- Floating Couple Images -->
-  <!-- Floating Couple Images -->
-<img src="images/pic1.jpeg" class="floating-img" style="top:15%; left:10%;">
-<img src="images/pic2.jpg" class="floating-img" style="top:10%; right:10%;">
-<img src="images/pic3.jpg" class="floating-img" style="bottom:15%; left:20%;">
-<img src="images/pic4.jpg" class="floating-img" style="bottom:10%; right:20%;">
-<img src="images/pic5.jpeg" class="floating-img" style="top:20%; left:40%;">
-<img src="images/pic6.jpeg" class="floating-img" style="bottom:20%; right:40%;">
-<img src="images/pic7.jpeg" class="floating-img" style="top:25%; right:50%;">
-<img src="images/pic8.jpg" class="floating-img" style="top:35%; left:70%;">
-<img src="images/pic9.jpg" class="floating-img" style="bottom:25%; left:50%;">
-<img src="images/pic10.jpg" class="floating-img" style="top:40%; right:30%;">
-<img src="images/pic11.jpg" class="floating-img" style="bottom:30%; left:10%;">
-<img src="images/pic12.jpg" class="floating-img" style="top:15%; right:30%;">
-<img src="images/pic13.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic14.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic15.jpeg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic16.jpg" class="floating-img" style="top:15%; right:30%;">
-<img src="images/pic17.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic18.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic19.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic20.jpg" class="floating-img" style="bottom:10%; left:60%;">
-<img src="images/pic21.jpg" class="floating-img" style="bottom:10%; left:60%;">
-
-
-
-
-
-
+  <!-- Floating Images -->
+  <img src="images/pic1.jpeg" class="floating-img">
+  <img src="images/pic2.jpg" class="floating-img">
+  <img src="images/pic3.jpg" class="floating-img">
+  <img src="images/pic4.jpg" class="floating-img">
+  <img src="images/pic5.jpeg" class="floating-img">
+  <img src="images/pic6.jpeg" class="floating-img">
+  <img src="images/pic7.jpeg" class="floating-img">
+  <img src="images/pic8.jpg" class="floating-img">
+  <img src="images/pic9.jpg" class="floating-img">
+  <img src="images/pic10.jpg" class="floating-img">
+  <img src="images/pic11.jpg" class="floating-img"> 
+  <img src="images/pic12.jpg" class="floating-img">
+  <img src="images/pic13.jpg" class="floating-img">
+  <img src="images/pic14.jpg" class="floating-img">
+  <img src="images/pic15.jpeg" class="floating-img"> 
+  <img src="images/pic16.jpg" class="floating-img">
+  <img src="images/pic17.jpg" class="floating-img"> 
+  <img src="images/pic18.jpg" class="floating-img">
+  <img src="images/pic19.jpg" class="floating-img">
+  <img src="images/pic20.jpg" class="floating-img"> 
+  <img src="images/pic21.jpg" class="floating-img">
 
   <canvas id="confetti"></canvas>
 
   <script>
-    // === CONFETTI EFFECT ===
+    // === CONFETTI ===
     const canvas = document.getElementById('confetti');
     const ctx = canvas.getContext('2d');
 
@@ -174,7 +210,7 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const confettiPieces = Array.from({ length: 250 }).map(() => ({
+    const confettiPieces = Array.from({ length: 200 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       r: Math.random() * 8 + 3,
@@ -208,12 +244,10 @@
       updateConfetti();
       requestAnimationFrame(animateConfetti);
     }
-
     animateConfetti();
 
-    // === FLOWER PETALS (emoji version) ===
+    // === FLOWER PETALS ===
     const flowerEmojis = ["🌸", "🌺", "🌷", "🌹", "💐"];
-
     function createFlower() {
       const flower = document.createElement('div');
       flower.classList.add('flower');
@@ -224,43 +258,35 @@
       document.body.appendChild(flower);
       setTimeout(() => flower.remove(), 10000);
     }
+    setInterval(createFlower, 400);
 
-    setInterval(createFlower, 300);
+    // === FLOATING IMAGES RANDOM ===
+    const images = document.querySelectorAll('.floating-img');
+    const positions = [];
+
+    images.forEach(img => {
+      let tries = 0;
+      let top, left;
+      do {
+        top = Math.random() * 70 + 10;
+        left = Math.random() * 70 + 10;
+        tries++;
+      } while (positions.some(p => Math.abs(p.top - top) < 15 && Math.abs(p.left - left) < 15) && tries < 50);
+      positions.push({ top, left });
+      img.style.top = top + '%';
+      img.style.left = left + '%';
+      floatRandom(img);
+    });
+
+    function floatRandom(element) {
+      const maxTranslate = 20;
+      const randomX = (Math.random() - 0.5) * maxTranslate;
+      const randomY = (Math.random() - 0.5) * maxTranslate;
+      const randomRotate = (Math.random() - 0.5) * 10;
+      element.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+      const duration = 3000 + Math.random() * 2000;
+      setTimeout(() => floatRandom(element), duration);
+    }
   </script>
-
-  <script>
-  const images = document.querySelectorAll('.floating-img');
-
-// Store initial positions to reduce overlap
-const positions = [];
-
-images.forEach(img => {
-  let tries = 0;
-  let top, left;
-  do {
-    top = Math.random() * 70 + 10; // avoid edges
-    left = Math.random() * 70 + 10;
-    tries++;
-  } while (positions.some(p => Math.abs(p.top - top) < 15 && Math.abs(p.left - left) < 15) && tries < 50);
-
-  positions.push({ top, left });
-  img.style.top = top + '%';
-  img.style.left = left + '%';
-  floatRandom(img);
-});
-
-function floatRandom(element) {
-  const maxTranslate = 30; // smaller range to avoid overlaps
-  const randomX = (Math.random() - 0.5) * maxTranslate; 
-  const randomY = (Math.random() - 0.5) * maxTranslate; 
-  const randomRotate = (Math.random() - 0.5) * 10; 
-
-  element.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
-
-  const duration = 3000 + Math.random() * 2000;
-  setTimeout(() => floatRandom(element), duration);
-}
-</script>
-
 </body>
 </html>
